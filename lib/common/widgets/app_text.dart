@@ -1,7 +1,7 @@
 // lib/core/widgets/custom_text.dart
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medical_app/app/theme/colors.dart';
+import 'package:medical_app/core/configs/theme/app_colors.dart';
 
 class AppText extends StatelessWidget {
   final String text;

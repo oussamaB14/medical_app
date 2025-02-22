@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/presentation/home_screen.dart';
+import 'package:medical_app/presentation/home/pages/home_screen.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
