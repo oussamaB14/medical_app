@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:medical_app/core/configs/constants/doctor_api.dart';
-import 'package:medical_app/data/models/doctor/doctor_model.dart';
+import 'package:medical_app/features/doctors/data/models/doctor_model.dart';
 
 abstract class DoctorRemoteDataSource {
   Future<List<DoctorModel>> getDoctors();

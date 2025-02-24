@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medical_app/domain/entities/doctor_entity.dart';
+import 'package:medical_app/features/doctors/domain/entities/doctor_entity.dart';
 
 part 'doctor_model.g.dart';
 
