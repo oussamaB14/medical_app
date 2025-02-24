@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
-import 'package:medical_app/core/configs/theme/app_colors.dart';
-import 'package:medical_app/common/widgets/app_text.dart';
 import 'package:medical_app/presentation/home/widgets/date_timeline_view.dart';
 import 'package:medical_app/presentation/home/widgets/home_app_bar.dart';
 

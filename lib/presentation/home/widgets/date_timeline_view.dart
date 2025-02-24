@@ -1,6 +1,7 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:medical_app/core/configs/theme/app_colors.dart';
+import 'package:medical_app/presentation/home/widgets/appointment_card.dart';
 
 class DateTimelineView extends StatefulWidget {
   const DateTimelineView({super.key});
@@ -14,7 +15,7 @@ class _DateTimelineViewState extends State<DateTimelineView> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 230,
+      height: 300,
       decoration: BoxDecoration(
         color: AppColors.secondaryColor,
       ),
@@ -76,38 +77,7 @@ class _DateTimelineViewState extends State<DateTimelineView> {
               },
             ),
             SizedBox(height: 6),
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: List.generate(4, (index) {
-                        final hour = 9 + index;
-                        final period = hour < 12 ? 'AM' : 'PM';
-                        final displayHour = hour <= 12 ? hour : hour - 12;
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4.0),
-                          child: Row(
-                            children: [
-                              SizedBox(width: 8),
-                              Text(
-                                '$displayHour $period',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: AppColors.primaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
-                ),
+              AppointmentCard(),
           ],
         ),
       ),
