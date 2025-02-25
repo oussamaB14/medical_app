@@ -4,7 +4,7 @@ import 'package:medical_app/features/doctors/domain/entities/doctor_entity.dart'
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:medical_app/features/doctors/presentation/bloc/doctor_bloc.dart';
 import 'package:medical_app/features/doctors/presentation/widgets/doctor_item_card.dart';
-
+// list view of the doctors in the home screen 
 class DoctorsListView extends StatelessWidget {
   const DoctorsListView({super.key});
 

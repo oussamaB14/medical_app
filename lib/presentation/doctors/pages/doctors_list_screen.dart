@@ -5,6 +5,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:iconly/iconly.dart';
 import 'package:medical_app/core/configs/theme/app_colors.dart';
 import 'package:medical_app/features/doctors/presentation/widgets/doctor_screen_card.dart';
+import 'package:medical_app/features/doctors/presentation/widgets/doctor_list_view.dart';
 
 class DoctorsListScreen extends StatefulWidget {
   const DoctorsListScreen({super.key});
@@ -61,11 +62,8 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [DoctorScreenCard()],
-        ),
+        padding: const EdgeInsets.all(20.0),
+        child: DoctorListView(),
       ),
     );
   }
