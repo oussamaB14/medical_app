@@ -28,7 +28,7 @@ class DoctorItemCard extends StatelessWidget {
           Hero(
             tag: 'doctor_avatar_${doctor.id}',
             child: CircleAvatar(
-              radius: 25,
+              radius: 40,
               backgroundImage: NetworkImage(
                 doctor.avatar.isNotEmpty 
                   ? doctor.avatar 
