@@ -6,28 +6,17 @@ part 'doctor_model.g.dart';
 @JsonSerializable()
 class DoctorModel extends DoctorEntity {
   const DoctorModel({
-    required String id,
-    required String name,
-    required String specialty,
-    required String avatar,
-    required int experience,
-    required String phoneNumber,
-    required String location,
-    required String bio,
-    required String focus,
-    required DateTime createdAt,
-  }) : super(
-          id: id,
-          name: name,
-          specialty: specialty,
-          avatar: avatar,
-          experience: experience,
-          phoneNumber: phoneNumber,
-          location: location,
-          bio: bio,
-          focus: focus,
-          createdAt: createdAt,
-        );
+    required super.id,
+    required super.name,
+    required super.specialty,
+    required super.avatar,
+    required super.experience,
+    required super.phoneNumber,
+    required super.location,
+    required super.bio,
+    required super.focus,
+    required super.createdAt,
+  });
 
   factory DoctorModel.fromJson(Map<String, dynamic> json) {
     return DoctorModel(

@@ -18,16 +18,15 @@ class DoctorBloc extends Bloc<DoctorEvent, DoctorState> {
         
         result.fold(
           (failure) {
-            print('Error fetching doctors: ${failure.message}');
             emit(DoctorError(message: failure.message));
           },
           (doctors) {
-            print('Loaded ${doctors.length} doctors');
+           // print('Loaded ${doctors.length} doctors');
             emit(DoctorLoaded(doctors: doctors));
           },
         );
       } catch (e) {
-        print('Unexpected error in bloc: $e');
+       // print('Unexpected error in bloc: $e');
         emit(DoctorError(message: e.toString()));
       }
     });

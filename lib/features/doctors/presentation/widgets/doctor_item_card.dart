@@ -17,7 +17,7 @@ class DoctorItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      width: 320,
+      width: 300,
       height: 110,
       decoration: BoxDecoration(
         color: AppColors.secondaryColor,
@@ -25,16 +25,19 @@ class DoctorItemCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          CircleAvatar(
-            radius: 25,
-            backgroundImage: NetworkImage(
-              doctor.avatar.isNotEmpty 
-                ? doctor.avatar 
-                : 'https://via.placeholder.com/150'
+          Hero(
+            tag: 'doctor_avatar_${doctor.id}',
+            child: CircleAvatar(
+              radius: 25,
+              backgroundImage: NetworkImage(
+                doctor.avatar.isNotEmpty 
+                  ? doctor.avatar 
+                  : 'https://via.placeholder.com/150'
+              ),
+              onBackgroundImageError: (exception, stackTrace) {
+                // Handle image load errors
+              },
             ),
-            onBackgroundImageError: (exception, stackTrace) {
-              // Handle image load errors
-            },
           ),
           SizedBox(width: 10),
           Column(

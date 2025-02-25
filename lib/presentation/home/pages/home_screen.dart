@@ -26,17 +26,20 @@ class _HomeScreenState extends State<HomeScreen> {
         preferredSize: Size.fromHeight(110.0),
         child: HomeAppBar(),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const DateTimelineView(),
-            const SizedBox(height: 10),
-            SizedBox(
-              height: MediaQuery.of(context).size.height - 220, 
-              child: DoctorsListView(),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                const DateTimelineView(),
+                const SizedBox(height: 10),
+              ],
             ),
-          ],
-        ),
+          ),
+          const SliverFillRemaining(
+            child: DoctorsListView(),
+          ),
+        ],
       ),
     );
   }
