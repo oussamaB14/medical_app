@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:medical_app/common/widgets/app_text.dart';
 import 'package:medical_app/core/configs/theme/app_colors.dart';
@@ -71,9 +72,12 @@ class HomeAppBar extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    HugeIcon(
-                      icon: HugeIcons.strokeRoundedStethoscope,
-                      color: AppColors.primaryColor,
+                    GestureDetector(
+                      onTap: () => context.go('/doctors'),
+                      child: HugeIcon(
+                        icon: HugeIcons.strokeRoundedStethoscope,
+                        color: AppColors.primaryColor,
+                      ),
                     ),
                     SizedBox(height: 4),
                     AppText('Doctors', color: AppColors.primaryColor),
