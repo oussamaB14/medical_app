@@ -13,7 +13,6 @@ class HomeAppBar extends StatelessWidget {
       preferredSize: Size.fromHeight(110.0), // Set the height of the app bar
 
       child: AppBar(
-        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 14.0),

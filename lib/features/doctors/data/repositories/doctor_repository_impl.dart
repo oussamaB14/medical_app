@@ -18,4 +18,14 @@ class DoctorRepositoryImpl implements DoctorRepository {
       return Left(ServerFailure(message: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, DoctorEntity>> getDoctorById(String id) async {
+    try {
+      final doctor = await remoteDataSource.getDoctorById(id);
+      return Right(doctor);
+    } catch (e) {
+      return Left(ServerFailure(message: e.toString()));
+    }
+  }
 }

@@ -4,4 +4,5 @@ import 'package:medical_app/features/doctors/domain/entities/doctor_entity.dart'
 
 abstract class DoctorRepository {
   Future<Either<Failure, List<DoctorEntity>>> getDoctors();
+  Future<Either<Failure, DoctorEntity>> getDoctorById(String id);
 } 

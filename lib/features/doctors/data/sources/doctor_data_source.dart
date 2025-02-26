@@ -5,6 +5,7 @@ import 'package:medical_app/features/doctors/data/models/doctor_model.dart';
 
 abstract class DoctorRemoteDataSource {
   Future<List<DoctorModel>> getDoctors();
+  Future<DoctorModel> getDoctorById(String id);
 }
 
 class DoctorRemoteDataSourceImpl implements DoctorRemoteDataSource {
@@ -22,6 +23,18 @@ class DoctorRemoteDataSourceImpl implements DoctorRemoteDataSource {
       return data.map((json) => DoctorModel.fromJson(json)).toList();
     } else {
       throw Exception('Failed to load doctors: ${response.statusCode}');
+    }
+  }
+
+  @override
+  Future<DoctorModel> getDoctorById(String id) async {
+    final response = await client.get(Uri.parse('${DoctorApi.baseUrl}/doctors/$id'));
+    
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      return DoctorModel.fromJson(data);
+    } else {
+      throw Exception('Failed to load doctor: ${response.statusCode}');
     }
   }
 }
