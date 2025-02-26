@@ -103,13 +103,67 @@ class _DoctorInfoScreenState extends State<DoctorInfoScreen> {
           : errorMessage != null
               ? Center(child: Text(errorMessage!))
               : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    DoctorInfoCard(doctor: doctor!),
-                  ],
+                  padding: const EdgeInsets.all(26.0),
+                  child: Column(
+                    children: [
+                      Center(child: DoctorInfoCard(doctor: doctor!)),
+                      SizedBox(height: 50),
+                      RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: "Profile\n",
+                            style: GoogleFonts.leagueSpartan(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.primaryColor,
+                            )),
+                        TextSpan(
+                            text: doctor?.bio,
+                            style: GoogleFonts.leagueSpartan(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.textDarkColor,
+                            ))
+                      ])),
+                      SizedBox(height: 30),
+                      RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: "Career Path\n",
+                            style: GoogleFonts.leagueSpartan(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.primaryColor,
+                            )),
+                        TextSpan(
+                            text: doctor?.bio,
+                            style: GoogleFonts.leagueSpartan(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.textDarkColor,
+                            ))
+                      ])),
+                      SizedBox(height: 30),
+                      RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: "highlights\n",
+                            style: GoogleFonts.leagueSpartan(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.primaryColor,
+                            )),
+                        TextSpan(
+                            text: doctor?.bio,
+                            style: GoogleFonts.leagueSpartan(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.textDarkColor,
+                            ))
+                      ]))
+                    ],
+                  ),
                 ),
-              ),
     );
   }
 }
